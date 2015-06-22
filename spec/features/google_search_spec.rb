@@ -5,7 +5,7 @@ describe 'Google Search', type: :feature do
   before :all do
     @google_url = 'http://google.com'
     @key_to_search_by = 'swat-capybara'
-    @results_we_should_see = ['sw2at/swat.gemspec at master', 'The Capybara Cave']
+    @results_we_should_see = ['sw2at/swat.gemspec at master', 'The Capybara Cave', 'https://github.com/tw4qa/sw2at']
   end
 
   it 'should show us a good search result' do
@@ -23,7 +23,11 @@ describe 'Google Search', type: :feature do
     end
 
     step 'Ensure that the page contains all those results' do
-      check_text(@results_we_should_see)
+      @results_we_should_see.each do |text|
+        sub_step "Check '#{text}' presence" do
+          check_text text
+        end
+      end
     end
   end
 end
