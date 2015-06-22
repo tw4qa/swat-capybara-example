@@ -4,8 +4,8 @@ describe 'Google Search', type: :feature do
 
   before :all do
     @google_url = 'http://google.com'
-    @key_to_search_by = 'swat-capybara'
-    @results_we_should_see = ['sw2at/swat.gemspec at master', 'The Capybara Cave', 'https://github.com/tw4qa/sw2at']
+    @key_to_search_by = 'sw2at-capybara'
+    @results_we_should_see = ['sw2at-capybara', 'tw4qa']
   end
 
   it 'should show us a good search result' do
